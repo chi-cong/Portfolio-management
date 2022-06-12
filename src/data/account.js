@@ -16,7 +16,7 @@ const checkAcc = (name, password) => {
   const findAcc = () => {
     var exist = false;
     accounts.forEach((account) => {
-      if (name == account.name && password == account.password) {
+      if (name === account.name && password === account.password) {
         exist = true;
       }
     });
