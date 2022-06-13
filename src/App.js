@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import checkAcc from "./data/account";
 import Login from "./Login";
 import MainPage from "./mainPage";
