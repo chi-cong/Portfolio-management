@@ -21,11 +21,13 @@ const Sidebar = ({ show, changeCurrSec, toggleModal, changeModalAct }) => {
       refBar.current.classList.remove("z-20");
     }
   });
+
   return (
     <div
       className='opacity-0 w-1/2 h-screen border-r-2 border-slate-500 sm:w-4/12 lg:w-2/12 lg:flex lg:opacity-100 lg:flex-col items-start fixed bg-slate-900 -z-20 lg:z-0 transition-all '
       ref={refBar}
     >
+      {/* logo */}
       <div className='h-1/6 w-full text-3xl text-center text-gray-500 flex justify-center items-center'>
         <h1>Web admin</h1>
       </div>
@@ -33,6 +35,8 @@ const Sidebar = ({ show, changeCurrSec, toggleModal, changeModalAct }) => {
         style={{ height: "1px", width: "100%" }}
         className='bg-slate-600'
       ></div>
+
+      {/* tabs container */}
       <div className='w-full h-4/6'>
         <Tab title={"Home"} icon={<FaHome />} changeCurrSec={changeCurrSec} />
         <Tab title={"About"} icon={<FaUser />} changeCurrSec={changeCurrSec} />
@@ -56,6 +60,8 @@ const Sidebar = ({ show, changeCurrSec, toggleModal, changeModalAct }) => {
         style={{ height: "1px", width: "100%" }}
         className='bg-slate-600'
       ></div>
+
+      {/* sign out button */}
       <div className='w-full'>
         <Tab
           title={"Sign out"}

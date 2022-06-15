@@ -9,11 +9,13 @@ const MainPage = ({ changeAccess }) => {
   const [width, setWidth] = useState(window.innerWidth);
   const [toggle, setToggle] = useState(null);
   const [currSec, setCurrSec] = useState("Home");
-  const [confirmation, setConfirmation] = useState(true);
+  const [confirmation, setConfirmation] = useState(false);
   const [modalAct, setModalAct] = useState();
+
   const checkWidth = () => {
     setWidth(window.innerWidth);
   };
+  // show/hide side bar for mobile UI
   const changeToggle = () => {
     if (toggle === false || toggle === null) {
       setToggle(true);
@@ -21,9 +23,11 @@ const MainPage = ({ changeAccess }) => {
       setToggle(false);
     }
   };
+  // change current main section
   const changeCurrSec = (sec) => {
     setCurrSec(sec);
   };
+  // show/hide confirmation modal
   const toggleModal = () => {
     if (confirmation) {
       setConfirmation(false);
@@ -31,18 +35,21 @@ const MainPage = ({ changeAccess }) => {
       setConfirmation(true);
     }
   };
+  // action for modal
   const changeModalAct = (act) => {
     setModalAct(act);
   };
+
   useEffect(() => {
     window.addEventListener("resize", checkWidth);
     return () => {
       window.removeEventListener("resize", checkWidth);
     };
   });
+
   return (
     <section className='flex flex-col lg:flex-row h-full z-0'>
-      {/* navbar */}
+      {/* navbar on mobile UI */}
       {width < 1024 && <div className='h-14 w-full'></div>}
       {width < 1024 && <Navbar toggleFunc={changeToggle} />}
 
