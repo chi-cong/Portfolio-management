@@ -3,6 +3,7 @@ import { FaBars } from "react-icons/fa";
 const Navbar = ({ toggleFunc }) => {
   const toggleClick = (e) => {
     e.currentTarget.classList.toggle("text-cyan-600");
+    e.currentTarget.classList.toggle("text-gray-500");
     e.currentTarget.classList.toggle("rotate-90");
     toggleFunc();
   };

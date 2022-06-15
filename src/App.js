@@ -7,12 +7,21 @@ function App() {
   // let [access, setAccess] = useState(false);
   let [access, setAccess] = useState(true);
   const handleAccess = (name, password) => {
-    const correction = setAccess(checkAcc(name, password));
+    var correction;
+    if (name !== null && password !== null) {
+      correction = setAccess(checkAcc(name, password));
+    } else {
+      setAccess(false);
+    }
     return correction;
   };
   return (
-    <div className='w-screen h-screen'>
-      {access ? <MainPage /> : <Login changeAccess={handleAccess} />}
+    <div className='w-screen h-full'>
+      {access ? (
+        <MainPage changeAccess={handleAccess} />
+      ) : (
+        <Login changeAccess={handleAccess} />
+      )}
     </div>
   );
 }
