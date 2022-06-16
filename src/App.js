@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import checkAcc from "./data/account";
-import Login from "./Login";
+import SignIn from "./signIn";
 import MainPage from "./mainPage";
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
       {access ? (
         <MainPage changeAccess={handleAccess} />
       ) : (
-        <Login changeAccess={handleAccess} />
+        <SignIn changeAccess={handleAccess} />
       )}
     </div>
   );

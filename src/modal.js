@@ -1,12 +1,14 @@
-const Modal = ({ toggleModal, action, signout }) => {
+const Modal = ({ toggleModal, action, signout, ID }) => {
   return (
     <div className='z-30 w-screen h-screen fixed flex justify-center items-center'>
-      <div className='w-4/5 h-1/3 sm:w-2/5 border-gray-800 border-2 mx-auto rounded-lg bg-white'>
-        <h3>Do you want to logout ?</h3>
-        <div className='w-full bg-gray-800' style={{ height: "1px" }}></div>
-        <div className='w-full h-1/6 m-1 flex gap-3'>
+      <div className='w-4/5 h-1/3 sm:w-3/5 lg:w-2/5 border-gray-800 border-2 mx-auto rounded-lg bg-white flex flex-col justify-between items-start p-4'>
+        <h3 className='text-2xl sm:text-3xl ml-3 mt-3'>
+          {action === "signout" && "Do you want to sign out ?"}
+          {action === "delete" && `Do you want to delete H-01 ?`}
+        </h3>
+        <div className='w-full h-1/4 ml-3 flex gap-3 items-center'>
           <button
-            className='bg-slate-600 rounded-md p-1'
+            className='bg-slate-600 rounded-md h-4/5 w-20 p-1 '
             onClick={() => {
               toggleModal();
             }}
@@ -14,7 +16,7 @@ const Modal = ({ toggleModal, action, signout }) => {
             Cancel
           </button>
           <button
-            className='bg-green-500 rounded-md p-1'
+            className='bg-green-500 rounded-lg h-4/5 w-20 p-1'
             onClick={() => {
               if (action === "signout") {
                 signout();

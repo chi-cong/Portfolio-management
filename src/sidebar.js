@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
+import { MainContext } from "./mainPage";
 import {
   FaHome,
   FaUser,
@@ -67,7 +68,6 @@ const Sidebar = ({ show, changeCurrSec, toggleModal, changeModalAct }) => {
           title={"Sign out"}
           icon={<FaSignOutAlt />}
           changeCurrSec={changeCurrSec}
-          showModal={toggleModal}
           changeModalAct={changeModalAct}
         />
       </div>
@@ -75,12 +75,13 @@ const Sidebar = ({ show, changeCurrSec, toggleModal, changeModalAct }) => {
   );
 };
 
-const Tab = ({ title, icon, changeCurrSec, showModal, changeModalAct }) => {
+const Tab = ({ title, icon, changeCurrSec, changeModalAct }) => {
+  const { toggleModal } = React.useContext(MainContext);
   const clickHandler = () => {
     if (title !== "Sign out") {
       changeCurrSec(title);
     } else {
-      showModal();
+      toggleModal();
       changeModalAct("signout");
     }
   };

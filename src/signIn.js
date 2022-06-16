@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Login = ({ changeAccess }) => {
+const SignIn = ({ changeAccess }) => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [correction, setCorrection] = useState(true);
@@ -45,7 +45,7 @@ const Login = ({ changeAccess }) => {
           className='w-28 h-9 bg-green-500 rounded-md'
           onClick={submitForm}
         >
-          Login
+          Sign in
         </button>
         {!correction && (
           <p className='text-red-500'>Name/Password is/are incorrect</p>
@@ -55,4 +55,4 @@ const Login = ({ changeAccess }) => {
   );
 };
 
-export default Login;
+export default SignIn;
