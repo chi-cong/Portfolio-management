@@ -3,6 +3,8 @@ import Sidebar from "./sidebar";
 import Navbar from "./navbar";
 import MainSec from "./mainSec";
 import Modal from "./modal";
+import { data } from "./data/demoData";
+import getData from "./data/getData";
 
 export const MainContext = React.createContext({});
 
@@ -43,6 +45,7 @@ const MainPage = ({ changeAccess }) => {
 
   useEffect(() => {
     window.addEventListener("resize", checkWidth);
+    getData();
     return () => {
       window.removeEventListener("resize", checkWidth);
     };
