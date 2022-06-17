@@ -1,4 +1,18 @@
+import getData from "../data/getData";
+import Item from "./item";
+
 const BlogSec = () => {
-  return <h1 className='w-full bg-orange-500 h-full'>Blog Section</h1>;
+  const blogData = getData().blogs;
+  let order = 0;
+  return (
+    <div className='w-full flex flex-col justify-center items-center h-full gap-2'>
+      {blogData.map((blog) => {
+        order++;
+        return (
+          <Item id={blog.id} order={order} currData={blogData} tab={"blogs"} />
+        );
+      })}
+    </div>
+  );
 };
 export default BlogSec;

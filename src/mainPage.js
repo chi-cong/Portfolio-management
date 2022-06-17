@@ -3,12 +3,11 @@ import Sidebar from "./sidebar";
 import Navbar from "./navbar";
 import MainSec from "./mainSec";
 import Modal from "./modal";
-import { data } from "./data/demoData";
 import getData from "./data/getData";
 
 export const MainContext = React.createContext({});
 
-const MainPage = ({ changeAccess }) => {
+const MainPage = ({ changeAccess, changeCurrItem, currItem }) => {
   const [width, setWidth] = useState(window.innerWidth);
   const [toggle, setToggle] = useState(null);
   const [currSec, setCurrSec] = useState("Home");
@@ -38,6 +37,7 @@ const MainPage = ({ changeAccess }) => {
       setConfirmation(true);
     }
   };
+
   // action for modal
   const changeModalAct = (act) => {
     setModalAct(act);
@@ -79,6 +79,7 @@ const MainPage = ({ changeAccess }) => {
             toggleModal={toggleModal}
             action={modalAct}
             signout={changeAccess}
+            id={currItem}
           />
         )}
         {confirmation && (

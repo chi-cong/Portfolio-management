@@ -73,13 +73,14 @@ export const data = {
       content_des: "lorem",
     },
     {
-      id: "b-01",
+      id: "b-02",
       image: "img",
-      title: "yaya",
+      title: "ayyo",
       content_des: "lorem",
     },
   ],
   contact: {
+    id: "c-01",
     contact_des: "lorem",
     location: "Ha noi",
     email: "example@gmail.com",
