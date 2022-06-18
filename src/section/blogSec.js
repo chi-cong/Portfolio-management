@@ -15,7 +15,7 @@ const BlogSec = () => {
           <Item id={blog.id} order={order} currData={blogData} tab={"blogs"} />
         );
       })}
-      <AddingBtn currData={blogData} />
+      <AddingBtn currData={blogData} tab={"blogs"} />
     </div>
   );
 };

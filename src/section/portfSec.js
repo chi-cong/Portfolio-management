@@ -18,7 +18,7 @@ const PortfolioSec = () => {
           />
         );
       })}
-      <AddingBtn currData={portData} />
+      <AddingBtn currData={portData} tab={"portfolio"} />
     </div>
   );
 };

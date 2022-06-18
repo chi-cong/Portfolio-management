@@ -9,7 +9,11 @@ const Modal = ({ toggleModal, action, signout, id }) => {
       <div className='w-4/5 h-1/3 sm:w-3/5 lg:w-2/5 border-gray-800 border-2 mx-auto rounded-lg bg-white flex flex-col justify-between items-start p-4'>
         <h3 className='text-2xl sm:text-3xl ml-3 mt-3'>
           {action === "signout" && "Do you want to sign out ?"}
-          {action === "delete" && `Do you want to delete ${id} ?`}
+          {action === "delete" && (
+            <h3>
+              Do you want to delete <span className='font-bold'>{id} ?</span>
+            </h3>
+          )}
         </h3>
         <div className='w-full h-1/4 ml-3 flex gap-3 items-center'>
           <button
