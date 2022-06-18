@@ -13,6 +13,7 @@ function App() {
   const [editMode, setEditMode] = useState(false);
   const [tab, setTab] = useState();
   const [currData, setCurrData] = useState();
+  const [editorAct, setEditAct] = useState();
 
   const handleAccess = (name, password) => {
     var correction;
@@ -44,6 +45,10 @@ function App() {
     setCurrData(dataObj);
   };
 
+  const changeEditorAct = (action) => {
+    setEditAct(action);
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -53,11 +58,12 @@ function App() {
         changeTab,
         changeCurrData,
         currData,
+        changeEditorAct,
       }}
     >
       <div className='w-screen h-full'>
         {editMode ? (
-          <Editor />
+          <Editor editorAct={editorAct} currData={currData} />
         ) : access ? (
           <MainPage changeAccess={handleAccess} currItem={currItem} />
         ) : (

@@ -1,4 +1,5 @@
 import getData from "../data/getData";
+import AddingBtn from "./addBtn";
 import Item from "./item";
 
 const PortfolioSec = () => {
@@ -17,6 +18,7 @@ const PortfolioSec = () => {
           />
         );
       })}
+      <AddingBtn currData={portData} />
     </div>
   );
 };

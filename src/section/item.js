@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { MainContext } from "../mainPage";
 import { AppContext } from "../App";
-import deleteItem from "./deleteItem";
 
 const Item = ({ id, order, noDelete, currData, tab }) => {
   return (

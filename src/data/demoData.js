@@ -1,13 +1,13 @@
 export const data = {
   Home: {
     image: "img",
-    Greeting: "hi",
-    Description: "lorem ipsum",
+    greeting: "hi",
+    description: "lorem ipsum",
   },
   About: {
     information: {
       id: "ai-01",
-      aboutDes: "lorem ipsum",
+      about_des: "lorem ipsum",
       project: 650,
       exp: 100,
       client: 300,
