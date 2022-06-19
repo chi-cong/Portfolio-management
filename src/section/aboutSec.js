@@ -1,7 +1,12 @@
 import getData from "../data/getData";
 import Item from "./item";
+import Title from "./title";
 
 const AboutSec = () => {
-  return <h1 className='w-full bg-red-400 h-full'>About Section</h1>;
+  return (
+    <div className='w-full flex flex-col justify-center items-center h-full gap-2'>
+      <Title secTitle={"about"} />
+    </div>
+  );
 };
 export default AboutSec;

@@ -2,7 +2,7 @@ import keyfix from "./keyfix";
 import { AppContext } from "./App";
 import React, { useState, useEffect } from "react";
 import AddItem from "./addItem";
-import EditItem from "./editIem";
+import editItem from "./editIem";
 
 const Editor = ({ editorAct, currData, currItem }) => {
   // get object key array
@@ -24,7 +24,8 @@ const Editor = ({ editorAct, currData, currItem }) => {
     if (editorAct === "adding") {
       AddItem(inputObj, currData, tab);
     } else {
-      EditItem(inputObj, currData, tab, currItem);
+      console.log("run");
+      editItem(inputObj, currData, tab, currItem);
     }
     toggleEditor();
   };
@@ -56,6 +57,11 @@ const Editor = ({ editorAct, currData, currItem }) => {
                   name={key}
                   className='border border-slate-900 rounded-md mb-2 h-8 w-full sm:text-xl'
                   {...(currItem !== null && { value: inputObj[key] })}
+                  {...(key === "id" && {
+                    disabled: true,
+                    className:
+                      "border border-slate-900 rounded-md mb-2 h-8 w-full sm:text-xl bg-neutral-200",
+                  })}
                   onChange={(e) => {
                     inputObj[key] = e.currentTarget.value;
                     setInputObj({ ...inputObj });
