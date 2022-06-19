@@ -6,14 +6,25 @@ import editItem from "./editIem";
 
 const Editor = ({ editorAct, currData, currItem }) => {
   // get object key array
-  const keys = Object.keys(currData[0]);
+  let keys = [];
+  if (Array.isArray(currData)) {
+    keys = Object.keys(currData[0]);
+  } else {
+    keys = Object.keys(currData);
+  }
+
   const { toggleEditor, tab } = React.useContext(AppContext);
-  const [inputObj, setInputObj] = useState(
-    currData.find((obj) => {
-      // for editing
-      return obj.id === currItem;
-    })
-  );
+  const [inputObj, setInputObj] = useState(() => {
+    if (Array.isArray(currData)) {
+      return currData.find((obj) => {
+        // for editing
+        console.log("wrong");
+        return obj.id === currItem;
+      });
+    } else {
+      return currData;
+    }
+  });
 
   const cancel = () => {
     toggleEditor();
@@ -55,12 +66,12 @@ const Editor = ({ editorAct, currData, currItem }) => {
                 <input
                   type='text'
                   name={key}
-                  className='border border-slate-900 rounded-md mb-2 h-8 w-full sm:text-xl'
+                  className='border border-slate-900 rounded-md mb-2 h-8 w-full sm:text-xl p-1'
                   {...(currItem !== null && { value: inputObj[key] })}
                   {...(key === "id" && {
                     disabled: true,
                     className:
-                      "border border-slate-900 rounded-md mb-2 h-8 w-full sm:text-xl bg-neutral-200",
+                      "border border-slate-900 rounded-md mb-2 h-8 w-full sm:text-xl bg-neutral-200 p-1",
                   })}
                   onChange={(e) => {
                     inputObj[key] = e.currentTarget.value;
@@ -70,7 +81,7 @@ const Editor = ({ editorAct, currData, currItem }) => {
               ) : (
                 <textarea
                   name={key}
-                  className='border border-slate-900 rounded-md mb-2 w-full sm:text-xl'
+                  className='border border-slate-900 rounded-md mb-2 w-full sm:text-xl p-1'
                   {...(currItem !== null && { value: inputObj[key] })}
                   onChange={(e) => {
                     inputObj[key] = e.currentTarget.value;

@@ -1,10 +1,10 @@
 export const data = {
-  Home: {
+  home: {
     image: "img",
     greeting: "hi",
     description: "lorem ipsum",
   },
-  About: {
+  about: {
     information: {
       id: "ai-01",
       about_des: "lorem ipsum",
