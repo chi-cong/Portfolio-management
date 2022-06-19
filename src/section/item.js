@@ -21,11 +21,25 @@ const Item = ({ id, order, noDelete, currData, tab }) => {
 
 const ItemBtn = ({ noDelete, id, currData, tab }) => {
   const { toggleModal, changeModalAct } = useContext(MainContext);
-  const { toggleEditor, changeCurrItem, changeTab, changeCurrData } =
-    useContext(AppContext);
+  const {
+    toggleEditor,
+    changeCurrItem,
+    changeTab,
+    changeCurrData,
+    changeEditorAct,
+  } = useContext(AppContext);
   return (
     <div className='flex justify-center w-1/12 mr-2 gap-2 sm:gap-5 lg:gap-8'>
-      <button className=' text-green-500' onClick={() => {}}>
+      <button
+        className=' text-green-500'
+        onClick={() => {
+          toggleEditor();
+          changeCurrData(currData);
+          changeCurrItem(id);
+          changeEditorAct("editing");
+          changeTab(tab);
+        }}
+      >
         <i>
           <FaEdit />
         </i>

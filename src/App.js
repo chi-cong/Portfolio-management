@@ -63,7 +63,11 @@ function App() {
     >
       <div className='w-screen h-full'>
         {editMode ? (
-          <Editor editorAct={editorAct} currData={currData} />
+          <Editor
+            editorAct={editorAct}
+            currData={currData}
+            currItem={currItem}
+          />
         ) : access ? (
           <MainPage changeAccess={handleAccess} currItem={currItem} />
         ) : (

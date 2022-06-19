@@ -3,13 +3,19 @@ import { FaPlus } from "react-icons/fa";
 import { AppContext } from "../App";
 
 const AddingBtn = ({ currData, tab }) => {
-  const { changeEditorAct, toggleEditor, changeCurrData, changeTab } =
-    React.useContext(AppContext);
+  const {
+    changeEditorAct,
+    toggleEditor,
+    changeCurrData,
+    changeTab,
+    changeCurrItem,
+  } = React.useContext(AppContext);
   const clickHandler = () => {
     changeEditorAct("adding");
     toggleEditor();
     changeCurrData(currData);
     changeTab(tab);
+    changeCurrItem(null);
   };
   return (
     <button

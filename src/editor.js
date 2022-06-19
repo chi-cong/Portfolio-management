@@ -1,13 +1,19 @@
 import keyfix from "./keyfix";
 import { AppContext } from "./App";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AddItem from "./addItem";
+import EditItem from "./editIem";
 
-const Editor = ({ editorAct, currData }) => {
+const Editor = ({ editorAct, currData, currItem }) => {
+  // get object key array
   const keys = Object.keys(currData[0]);
   const { toggleEditor, tab } = React.useContext(AppContext);
-  // const [inputObj, setInputObj] = useState();
-  let newObj = {};
+  const [inputObj, setInputObj] = useState(
+    currData.find((obj) => {
+      // for editing
+      return obj.id === currItem;
+    })
+  );
 
   const cancel = () => {
     toggleEditor();
@@ -15,10 +21,19 @@ const Editor = ({ editorAct, currData }) => {
 
   const confirm = (e) => {
     e.preventDefault();
-    console.log(tab);
-    AddItem(newObj, currData, tab);
+    if (editorAct === "adding") {
+      AddItem(inputObj, currData, tab);
+    } else {
+      EditItem(inputObj, currData, tab, currItem);
+    }
     toggleEditor();
   };
+
+  useEffect(() => {
+    if (currItem === null) {
+      setInputObj({});
+    }
+  }, []);
 
   return (
     <div className='w-screen h-full flex flex-col justify-center items-center'>
@@ -40,16 +55,20 @@ const Editor = ({ editorAct, currData }) => {
                   type='text'
                   name={key}
                   className='border border-slate-900 rounded-md mb-2 h-8 w-full sm:text-xl'
+                  {...(currItem !== null && { value: inputObj[key] })}
                   onChange={(e) => {
-                    newObj[key] = e.currentTarget.value;
+                    inputObj[key] = e.currentTarget.value;
+                    setInputObj({ ...inputObj });
                   }}
                 />
               ) : (
                 <textarea
                   name={key}
                   className='border border-slate-900 rounded-md mb-2 w-full sm:text-xl'
+                  {...(currItem !== null && { value: inputObj[key] })}
                   onChange={(e) => {
-                    newObj[key] = e.currentTarget.value;
+                    inputObj[key] = e.currentTarget.value;
+                    setInputObj({ ...inputObj });
                   }}
                 />
               )}
