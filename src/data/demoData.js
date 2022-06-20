@@ -1,5 +1,6 @@
 export const data = {
   home: {
+    id: "h-01",
     image: "img",
     greeting: "hi",
     description: "lorem ipsum",
@@ -13,7 +14,7 @@ export const data = {
       client: 300,
       review: 400,
     },
-    skill: [
+    skills: [
       {
         id: "as-01",
         lang: "html",
@@ -30,9 +31,9 @@ export const data = {
         score: 90,
       },
     ],
-    timeLine: [
+    timeline: [
       {
-        id: "ai-01",
+        id: "at-01",
         start_date: "2018",
         end_date: "present",
         title: "c++ programmer",
@@ -40,7 +41,7 @@ export const data = {
         job_des: "lorem",
       },
       {
-        id: "ai-02",
+        id: "at-02",
         start_date: "2015",
         end_date: "2018",
         title: "react programmer",

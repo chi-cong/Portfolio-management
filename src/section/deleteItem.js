@@ -1,15 +1,15 @@
 import getData from "../data/getData";
 
-const deleteItem = (id, currData, tab) => {
+const deleteItem = (id, currData, tab, about) => {
   const newData = currData.filter((item) => {
     return item.id !== id;
   });
   let oldData = getData();
-  if (tab === "portfolio") {
-    oldData.portfolio = newData;
+  if (about === true) {
+    oldData.about[tab] = newData;
     localStorage.setItem("data", JSON.stringify(oldData));
-  } else if (tab === "blogs") {
-    oldData.blogs = newData;
+  } else {
+    oldData[tab] = newData;
     localStorage.setItem("data", JSON.stringify(oldData));
   }
 };

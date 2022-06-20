@@ -13,12 +13,12 @@ const Editor = ({ editorAct, currData, currItem }) => {
     keys = Object.keys(currData);
   }
 
-  const { toggleEditor, tab } = React.useContext(AppContext);
+  const { toggleEditor, tab, about } = React.useContext(AppContext);
+  const [existedId, setExistedId] = useState(false);
   const [inputObj, setInputObj] = useState(() => {
     if (Array.isArray(currData)) {
       return currData.find((obj) => {
         // for editing
-        console.log("wrong");
         return obj.id === currItem;
       });
     } else {
@@ -33,12 +33,22 @@ const Editor = ({ editorAct, currData, currItem }) => {
   const confirm = (e) => {
     e.preventDefault();
     if (editorAct === "adding") {
-      AddItem(inputObj, currData, tab);
+      if (
+        currData.find((obj) => {
+          // for editing
+          return obj.id === inputObj.id;
+        }) === undefined
+      ) {
+        AddItem(inputObj, currData, tab, about);
+        setExistedId(false);
+        toggleEditor();
+      } else {
+        setExistedId(true);
+      }
     } else {
-      console.log("run");
-      editItem(inputObj, currData, tab, currItem);
+      editItem(inputObj, currData, tab, currItem, about);
+      toggleEditor();
     }
-    toggleEditor();
   };
 
   useEffect(() => {
@@ -61,6 +71,9 @@ const Editor = ({ editorAct, currData, currItem }) => {
             <div className='flex flex-col md:w-2/5 sm:w-3/5 w-4/5'>
               <label htmlFor={key} className='capitalize sm:text-2xl text-xl'>
                 {label}
+                {existedId && key === "id" && (
+                  <span className='text-red-600'> * Existed Id</span>
+                )}
               </label>
               {!label.includes("description") ? (
                 <input
@@ -68,11 +81,12 @@ const Editor = ({ editorAct, currData, currItem }) => {
                   name={key}
                   className='border border-slate-900 rounded-md mb-2 h-8 w-full sm:text-xl p-1'
                   {...(currItem !== null && { value: inputObj[key] })}
-                  {...(key === "id" && {
-                    disabled: true,
-                    className:
-                      "border border-slate-900 rounded-md mb-2 h-8 w-full sm:text-xl bg-neutral-200 p-1",
-                  })}
+                  {...(key === "id" &&
+                    editorAct === "editing" && {
+                      disabled: true,
+                      className:
+                        "border border-slate-900 rounded-md mb-2 h-8 w-full sm:text-xl bg-neutral-200 p-1",
+                    })}
                   onChange={(e) => {
                     inputObj[key] = e.currentTarget.value;
                     setInputObj({ ...inputObj });

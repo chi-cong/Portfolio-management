@@ -2,13 +2,14 @@ import React from "react";
 import { FaPlus } from "react-icons/fa";
 import { AppContext } from "../App";
 
-const AddingBtn = ({ currData, tab }) => {
+const AddingBtn = ({ currData, tab, about }) => {
   const {
     changeEditorAct,
     toggleEditor,
     changeCurrData,
     changeTab,
     changeCurrItem,
+    changeAbout,
   } = React.useContext(AppContext);
   const clickHandler = () => {
     changeEditorAct("adding");
@@ -16,6 +17,7 @@ const AddingBtn = ({ currData, tab }) => {
     changeCurrData(currData);
     changeTab(tab);
     changeCurrItem(null);
+    changeAbout(about);
   };
   return (
     <button

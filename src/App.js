@@ -14,6 +14,7 @@ function App() {
   const [tab, setTab] = useState();
   const [currData, setCurrData] = useState();
   const [editorAct, setEditAct] = useState();
+  const [about, setAbout] = useState(false);
 
   const handleAccess = (name, password) => {
     var correction;
@@ -49,6 +50,10 @@ function App() {
     setEditAct(action);
   };
 
+  const changeAbout = (isAbout) => {
+    setAbout(isAbout);
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -59,6 +64,8 @@ function App() {
         changeCurrData,
         currData,
         changeEditorAct,
+        about,
+        changeAbout,
       }}
     >
       <div className='w-screen h-full'>
