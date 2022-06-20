@@ -7,8 +7,7 @@ import Editor from "./editor";
 export const AppContext = React.createContext();
 
 function App() {
-  // let [access, setAccess] = useState(false);
-  const [access, setAccess] = useState(true);
+  const [access, setAccess] = useState(false);
   const [currItem, setCurrItem] = useState();
   const [editMode, setEditMode] = useState(false);
   const [tab, setTab] = useState();

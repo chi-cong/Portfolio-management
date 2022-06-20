@@ -16,25 +16,29 @@ const SignIn = ({ changeAccess }) => {
   };
   return (
     <div className='w-screen h-screen'>
-      <form className='bg-amber-500 xl:w-5/12 md:w-3/5 sm:w-3/4 h-1/2 translate-y-1/2 sm:mx-auto rounded-lg flex flex-col justify-center items-center gap-5 shadow-lg shadow-amber-500 mx-4'>
-        <label htmlFor='accName'>Name</label>
+      <form className='bg-white border-2 border-slate-900 xl:w-5/12 md:w-3/5 sm:w-3/4 h-1/2 translate-y-1/2 sm:mx-auto rounded-lg flex flex-col justify-center items-center gap-5 shadow-lg shadow-slate-900 mx-4'>
+        <label htmlFor='accName' className='text-lg font-normal'>
+          Name
+        </label>
         <input
           type='text'
           name='accName'
           id='accName'
-          className='w-3/6 sm:h-8'
+          className='w-3/6 sm:h-8 border border-slate-900 rounded-lg '
           value={name}
           onChange={(e) => {
             setName(e.target.value);
           }}
           onKeyPress={pressingKey}
         />
-        <label htmlFor='accPassword'>Password</label>
+        <label htmlFor='accPassword' className='text-lg font-normal'>
+          Password
+        </label>
         <input
           type='password'
           name='accPassword'
           id='accPassword'
-          className='w-3/6 sm:h-8'
+          className='w-3/6 sm:h-8 border border-slate-900 rounded-lg'
           value={password}
           onChange={(e) => {
             setPassword(e.target.value);

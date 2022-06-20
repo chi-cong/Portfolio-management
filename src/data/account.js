@@ -1,16 +1,16 @@
 const checkAcc = (name, password) => {
   let accounts = [
     {
-      name: "ManCity",
+      name: "chicong222",
       password: "master222",
     },
     {
-      name: "Liverpool",
+      name: "truonggiang555",
       password: "password555",
     },
     {
-      name: "realMadrid",
-      password: "boy123",
+      name: "quoctuan66",
+      password: "name666",
     },
   ];
   const findAcc = () => {
