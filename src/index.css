@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+  @media screen and (max-height: 550px) {
+    .signin-h{
+      height : 80% !important
+    }
+  }
+}

@@ -15,8 +15,8 @@ const SignIn = ({ changeAccess }) => {
     }
   };
   return (
-    <div className='w-screen h-screen'>
-      <form className='bg-white border-2 border-slate-900 xl:w-5/12 md:w-3/5 sm:w-3/4 h-1/2 translate-y-1/2 sm:mx-auto rounded-lg flex flex-col justify-center items-center gap-5 shadow-lg shadow-slate-900 mx-4'>
+    <div className='w-screen h-screen flex justify-center items-center'>
+      <form className='bg-white border-2 border-slate-900 xl:w-5/12 md:w-3/5 sm:w-3/4 h-1/2 signin-h rounded-lg flex flex-col justify-center items-center gap-5 shadow-lg shadow-slate-900 mx-4'>
         <label htmlFor='accName' className='text-lg font-normal'>
           Name
         </label>
