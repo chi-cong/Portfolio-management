@@ -1,6 +1,6 @@
 # Webapp quản lý trang thông tin cá nhân
 
-App quản lý CRUD (tạo - đọc - cập nhật - xóa) đơn giản cho project https://github.com/chi-cong/BTL-LT-Web
+App quản lý CRUD (tạo - đọc - cập nhật - xóa) đơn giản cho project https://github.com/chi-cong/BTL-LT-Web.
 Địa chỉ url của tại https://curious-kitten-11dfba.netlify.app/
 
 ## Các nội dung chính
@@ -19,7 +19,7 @@ App quản lý CRUD (tạo - đọc - cập nhật - xóa) đơn giản cho proj
 
 ## Thông tin dữ liệu
 
-App không kết nối trực tiếp tới web client project hay bất cứ cơ sở dữ liệu nào. Mục tiêu chính của app nhằm giả lập các chức năng cần thiết cho việc quản lý dữ liệu cho web client. Do vậy dữ liệu sẽ được lưu vào local storage
+App không kết nối trực tiếp tới web client project hay bất cứ cơ sở dữ liệu nào. Mục tiêu chính của app nhằm giả lập các chức năng cần thiết cho việc quản lý dữ liệu cho web client. Do vậy dữ liệu sẽ được lưu vào local storage.
 Khi hoàn thành việc đăng nhập, app sẽ có 1 phần dữ liệu có sẵn và tự động được thêm vào nếu trong local storage chưa có dữ liệu
 
 ![Demo data](./readmeImg/demoData.png)
@@ -41,7 +41,7 @@ Giao diện điện thoại trên Iphone 12 pro
 
 ![Sign in 12 pro](./readmeImg/SignIn12Pro.png)
 
-App chưa có chức năng kiểm soát ký tự và tên tài khoản, do vậy người dùng phải nhập chính xác cả chữ in hoa và thường
+App chưa có chức năng kiểm soát ký tự và tên tài khoản, do vậy người dùng phải nhập chính xác cả chữ in hoa và thường.
 Nếu nhập sai, form đăng nhập sẽ hiện thông báo
 
 ![Sign in error](./readmeImg/SigninErr.png)
@@ -62,19 +62,19 @@ Giao diện trên điện thoại khi mở sidebar
 
 ![Nav on](./readmeImg/navOn.png)
 
-Giao diện luôn có 2 thành phần chính là phần hiển thị danh sách dữ liệu và sidebar để di chuyển qua lại giữa các danh sách. Trên điện thoại sẽ có thêm navbar và nút menu để bật tắt sidebar. Cả sidebar và navbar đều có css position: fixed để tạo thuận tiện cho người dùng
+Giao diện luôn có 2 thành phần chính là phần hiển thị danh sách dữ liệu và sidebar để di chuyển qua lại giữa các danh sách. Trên điện thoại sẽ có thêm navbar và nút menu để bật tắt sidebar. Cả sidebar và navbar đều có css position: fixed để tạo thuận tiện cho người dùng.
 Bên cạnh đó, side bar còn cho phép ta điều thực hiện chức năng đăng xuất, khi nhấn nút đăng xuất sẽ hiện 1 bảng xác nhận hành động
 
 ![Sign out](./readmeImg/sign%20out.png)
 
-Tại phần hiển thị danh sách, trên cùng sẽ hiện tên mục của danh sách, riêng mục About sẽ có các nút chuyển qua lại giữa các mục con
+Tại phần hiển thị danh sách, trên cùng sẽ hiện tên mục của danh sách, riêng mục About sẽ có các nút chuyển qua lại giữa các mục con.
 Một số danh sách có chức năng thêm thành phần sẽ có nút thêm ở dưới cùng, khi nhấn sẽ chuyển đển trang chi tiết thành phần (sẽ đề cập ngay sau đây). Trên mỗi thành phần đều có nút chỉnh sửa màu xanh lá, khi click sẽ chuyển đến trang chỉnh sửa. Một số sẽ nút màu đỏ tương ứng với chức năng xóa. Khi nhấn sẽ hiện thông báo xác nhận, ghi rõ ID của thành phần sẽ xóa
 
 ![Delete](./readmeImg/delete.png)
 
 ### Trang chi tiết thành phần
 
-Trang này sẽ đảm nhận 3 chức năng : đọc, cập nhật và tạo
+Trang này sẽ đảm nhận 3 chức năng : đọc, cập nhật và tạo.
 
 Khi nhấn nút chỉnh sửa ở trang chính, nó sẽ trả về trang chi tiết thành phần như sau
 
