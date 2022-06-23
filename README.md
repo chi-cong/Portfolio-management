@@ -5,9 +5,9 @@ App quản lý CRUD (tạo - đọc - cập nhật - xóa) đơn giản cho proj
 
 ## Các nội dung chính
 
-- [Các-công-nghệ-được-sử-dụng] (#Các-công-nghệ-được-sử-dụng)
-- [Thông tin dữ liệu] (#thông-tin-dữ-liệu)
-- [Giao diện và chức năng] (#Giao-diện-và-chức-năng)
+- Các công nghệ được sử dụng
+- Thông tin dữ liệu
+- Giao diện và chức năng
 
 ## Các công nghệ được sử dụng
 
